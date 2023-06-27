@@ -139,10 +139,47 @@ public class FuncionesVectores {
 			System.out.print(vector[j]+ " ");
 		}
 	}
+
+
+
+	public static boolean sonParalelos(int vector[], int vector2[]) {
+		boolean paralelo=true;
+		if (vector.length!=vector2.length) {
+			return false;
+		}
+		double factor=vector[0]/(double)vector[0];
+		for(int i=1;i< vector.length && paralelo==true; i++) {
+			if (vector[i]/(double)vector2[i]!=factor) {
+				paralelo=false;
+			}
+		}
+		return paralelo;
+	}
+
+	public static boolean esCapicua(int vector[]) {
+		boolean capicua=true;
+		for(int i=0; i<vector.length/2 && capicua==true; i++) {
+			if (vector[i]!=vector[vector.length-1-i]) {
+				capicua=false;				
+			}
+		}
+		return capicua;
+	}
+	
+/*	Esta es otra forma de ahcer lo mismo que el de arriba pero mas sencilla
+ * 
+ * public static boolean esCapicua(int vector[]) {
+	boolean capicua=true;
+	for(int i=0, j=vector.length-1; i<j; i++ , j--) {
+		if (vector[i]!=vector[j]) {
+			capicua=false;
+	}
+	}
+	return capicua;
+	} */
+	
+
+	
 }
-		
-
-
-
 
 
